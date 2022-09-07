@@ -4,6 +4,7 @@
 
 
 
+
 To run the project:
 
 -> Navigate into the workshop folder.
@@ -13,6 +14,7 @@ To run the project:
 -> Inside the contact column, see the response sumbitted.
 -> To access the database, see the SQL Lite DB file inside the directory.
 
-
+UPDATE:(SEPT-7-22)
+->Now you can display content in the MESSAGE-BOARD, while updating the content in the admin panel, withou touching the code.
 
 NOTE: Not a production grade!
