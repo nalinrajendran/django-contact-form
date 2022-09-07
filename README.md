@@ -18,4 +18,16 @@ To run the project:
 ## UPDATE:(SEPT-7-22)
 ->Now you can display content in the MESSAGE-BOARD, while updating the content in the admin panel, withou touching the code.
 
+
+## Before running the programme, delete the db.sqlite3.
+## Run these commands in the terminal.  
+### python manage.py makemigrations
+### python manage.py migrate
+### python manage.py createsuperuser
+### python manage.py runserver
+
+
+Then create a super user with your desired credentials.
+
+
 NOTE: Not a production grade!
