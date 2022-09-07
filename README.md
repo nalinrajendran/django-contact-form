@@ -1,4 +1,5 @@
-# django-form
+# Django-Form
+# Django-Message Board
 
  This is a Django based contact form, which has a simple form which is connected to a SQL-Lite database and has a feature to be added elements such as a Nav-bar and stuffs. It has an admin Interface to view the entires in the DB.
 
@@ -14,7 +15,7 @@ To run the project:
 -> Inside the contact column, see the response sumbitted.
 -> To access the database, see the SQL Lite DB file inside the directory.
 
-UPDATE:(SEPT-7-22)
+## UPDATE:(SEPT-7-22)
 ->Now you can display content in the MESSAGE-BOARD, while updating the content in the admin panel, withou touching the code.
 
 NOTE: Not a production grade!
