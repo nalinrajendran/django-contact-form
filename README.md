@@ -19,7 +19,7 @@ To run the project:
 ->Now you can display content in the MESSAGE-BOARD, while updating the content in the admin panel, withou touching the code.
 
 
-## Before running the programme, delete the db.sqlite3.
+## Before running the programme for the first time, delete the db.sqlite3.
 ## Run these commands in the terminal.  
 ### python manage.py makemigrations
 ### python manage.py migrate
