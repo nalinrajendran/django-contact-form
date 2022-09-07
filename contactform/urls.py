@@ -5,5 +5,8 @@ from . import views
 urlpatterns = [
     
     path('', views.form, name = 'form'),
+    
+    path('board', views.HomePage.as_view(), name= 'board' ),
 
 ]
+

@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from .models import Contact
 from django.http import HttpResponse
-
+from .models import Post
+from django.views.generic import ListView
 # Create your views here.
 
 def form(request):
@@ -22,5 +23,14 @@ def form(request):
 
 
     return render (request, 'form.html')
+
+
+class HomePage(ListView):
+
+    model = Post
+
+    template_name = 'board.html'
+    context_object_name = 'all_posts_list'
+
 
 
