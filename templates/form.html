@@ -10,72 +10,569 @@
 
     <title>STUDENT REGISTRATION</title>
 
-    <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">PROG-WORKSHOP-22</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/">Form</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/board">Message Board</a>
-          </li>
-          
-        </ul>
-      </div>
-    </nav>
+<!--    <nav class="navbar navbar-dark bg-dark">-->
+<!--      <a class="navbar-brand" href="#">PROG-WORKSHOP-22</a>-->
+<!--      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--        <span class="navbar-toggler-icon"></span>-->
+<!--      </button>-->
+<!--      <div class="collapse navbar-collapse" id="navbarNav">-->
+<!--        <ul class="navbar-nav">-->
+
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="/">Form</a>-->
+<!--          </li>-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="/board">Message Board</a>-->
+<!--          </li>-->
+
+<!--        </ul>-->
+<!--      </div>-->
+<!--    </nav>-->
 
   </head>
   <body>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #C4AEF7;
+  overflowX: hidden;
+}
+
+#contact {
+  background-color: #C4AEF7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-box {
+  width: clamp(100px, 90%, 1000px);
+  margin: 80px 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact-links, .contact-form-wrapper {
+  width: 50%;
+  padding: 8% 5% 10% 5%;
+}
+
+
+.contact-links {
+  background-color: #1f2e43;
+  background:
+    radial-gradient(
+      circle at 55% 92%, #426691 0 12%, transparent 12.2%
+    ),
+    radial-gradient(
+      circle at 94% 72%, #426691 0 10%, transparent 10.2%
+    ),
+    radial-gradient(
+      circle at 20% max(78%, 350px), #263a53 0 7%, transparent 7.2%
+    ),
+    radial-gradient(
+      circle at 0% 0%, #263a53 0 40%, transparent 40.2%
+    ),
+    #1f2e43;
+  border-radius: 10px 0 0 10px;
+}
+
+.contact-form-wrapper {
+  background-color: #ffffff8f;
+  border-radius: 0 10px 10px 0;
+}
+
+@media only screen and (max-width: 800px) {
+  .contact-links, .contact-form-wrapper {
+    width: 100%;
+  }
+
+  .contact-links {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .contact-form-wrapper {
+    border-radius: 0 0 10px 10px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .contact-box {
+    width: 95%;
+    margin: 8% 5%;
+  }
+}
+
+h2 {
+  font-family: 'Arimo', sans-serif;
+  color: #fff;
+  font-size: clamp(30px, 6vw, 60px);
+  letter-spacing: 2px;
+  text-align: center;
+  transform: scale(.95, 1);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.link {
+  margin: 10px;
+  cursor: pointer;
+}
+
+img {
+  width: 45px;
+  height: 45px;
+  filter:
+    hue-rotate(220deg)
+    drop-shadow(2px 4px 4px #0006);
+  transition: 0.2s;
+  user-select: none;
+}
+
+img:hover {
+  transform: scale(1.1, 1.1);
+}
+
+img:active {
+  transform: scale(1.1, 1.1);
+  filter:
+    hue-rotate(220deg)
+    drop-shadow(2px 4px 4px #222)
+    sepia(0.3);
+}
+
+.form-item {
+  position: relative;
+}
+
+label, input, textarea {
+  font-family: 'Poppins', sans-serif;
+}
+
+label {
+  position: absolute;
+  top: 10px;
+  left: 2%;
+  color: #999;
+  font-size: clamp(14px, 1.5vw, 18px);
+  pointer-events: none;
+  user-select: none;
+}
+
+input, textarea {
+  width: 100%;
+  outline: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 12px;
+  font-size: clamp(15px, 1.5vw, 18px);
+}
+
+input:focus+label,
+input:valid+label,
+textarea:focus+label,
+textarea:valid+label {
+  font-size: clamp(13px, 1.3vw, 16px);
+  color: #777;
+  top: -20px;
+  transition: all .225s ease;
+}
+
+.submit-btn {
+  background-color: #fd917e;
+  filter: drop-shadow(2px 2px 3px #0003);
+  color: #fff;
+  font-family: "Poppins",sans-serif;
+  font-size: clamp(16px, 1.6vw, 18px);
+  display: block;
+  padding: 12px 20px;
+  margin: 2px auto;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s;
+}
+
+.submit-btn:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.submit-btn:active {
+  transform: scale(1.1, 1.1);
+  filter: sepia(0.5);
+}
+
+@media only screen and (max-width: 800px) {
+  h2 {
+    font-size: clamp(40px, 10vw, 60px);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  h2 {
+    font-size: clamp(30px, 12vw, 60px);
+  }
+
+  .links {
+    padding-top: 30px;
+  }
+
+  img {
+    width: 38px;
+    height: 38px;
+  }
+}
+</style>
 
     <br>
 
 
-    <center> <h1>CONTACT FORM</h1> </center>
 
-    
-    <form method="POST">
+
+
+<!--    <form method="POST">-->
+<!--        {%csrf_token%}-->
+<!--        <div class="form-group col-md-6">-->
+<!--          <label for="exampleInputEmail1">Name</label>-->
+<!--          <input name = "name" type="text" class="form-control" id="name" aria-describedby="emailHelp">-->
+<!--          <small id="emailHelp" class="form-text text-muted">As per your Certificates.</small>-->
+<!--        </div>-->
+
+<!--        <div class="form-group col-md-6">-->
+<!--          <label for="exampleInputPassword1">Roll.No</label>-->
+<!--          <input name = "rollno" type="text" class="form-control" id="rollno">-->
+<!--        </div>-->
+
+<!--        <div class="form-group col-md-6">-->
+<!--            <label for="exampleInputPassword1">Mail</label>-->
+<!--            <input name = "mail" type="email" class="form-control" id="mail">-->
+<!--          </div>-->
+
+<!--        <div class="form-group col-md-6">-->
+<!--            <label for="inputState">Your Current Programming Level</label>-->
+<!--            <select name="skill" id="inputState" class="form-control" id="skill">-->
+<!--              <option selected>Beginner</option>-->
+<!--              <option>Intermediate</option>-->
+<!--              <option>Pro</option>-->
+<!--            </select>-->
+<!--          </div>-->
+
+
+<!--        <button type="submit" class="btn btn-primary">Submit</button>-->
+
+
+<!--      </form>-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!--    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>-->
+
+
+
+<!--  Navbar-->
+  <style>*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.html{
+    font-size: 62.5%;
+}
+
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines{
+    display: none;
+}
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+.navbar{
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
+    top:0;
+    width: 100%;
+    background: #fff;
+    color: #000;
+    opacity: 0.85;
+    z-index: 100;
+}
+
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    height: 56px;
+    align-items: center;
+}
+
+.menu-items{
+    order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 60px;
+}
+.logo{
+    order: 1;
+    font-size: 2.3rem;
+}
+
+.menu-items li{
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar a{
+    color: #444;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover{
+    color: #117964;
+}
+
+@media (max-width: 768px){
+    .navbar{
+        opacity: 0.95;
+    }
+
+    .navbar-container input[type="checkbox"],
+    .navbar-container .hamburger-lines{
+        display: block;
+    }
+
+    .navbar-container{
+        display: block;
+        position: relative;
+        height: 64px;
+    }
+
+    .navbar-container input[type="checkbox"]{
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 30px;
+        top: 20px;
+        left: 20px;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .navbar-container .hamburger-lines{
+        display: block;
+        height: 28px;
+        width: 35px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .navbar-container .hamburger-lines .line{
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background: #333;
+    }
+
+    .navbar-container .hamburger-lines .line1{
+        transform-origin: 0% 0%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar-container .hamburger-lines .line2{
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .navbar-container .hamburger-lines .line3{
+        transform-origin: 0% 100%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar .menu-items{
+        padding-top: 100px;
+        background: #fff;
+        height: 100vh;
+        max-width: 300px;
+        transform: translate(-150%);
+        display: flex;
+        flex-direction: column;
+        margin-left: -40px;
+        padding-left: 40px;
+        transition: transform 0.5s ease-in-out;
+        box-shadow:  5px 0px 10px 0px #aaa;
+        overflow: scroll;
+    }
+
+    .navbar .menu-items li{
+        margin-bottom: 1.8rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .logo{
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 2.5rem;
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .menu-items{
+        transform: translateX(0);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1{
+        transform: rotate(45deg);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2{
+        transform: scaleY(0);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3{
+        transform: rotate(-45deg);
+    }
+
+}
+
+@media (max-width: 500px){
+    .navbar-container input[type="checkbox"]:checked ~ .logo{
+        display: none;
+    }
+}</style>
+  <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" name="" id="">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-items">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Quiz</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="/board">Announcements</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <h1 class="logo">CEN</h1>
+        </div>
+    </nav>
+
+
+ <!-- Header -->
+    <div id="nav-bg" class="btn"></div>
+    <div id="toggle-btn" class="btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="wrapper">
+      <nav>
+        <ul>
+          <!-- <li><a class="link" href="#0">Events</a></li>
+          <li><a class="link" href="#0">About</a></li>
+          <li><a class="link" href="#0">Contact</a></li> -->
+          <li><a class="link" href="./contact.html">Registration</a></li>
+        </ul>
+      </nav>
+
+      <div id="content">
+        <h1>  </h1>
+      </div>
+    </div>
+
+    <!--Header close  -->
+
+<section id="contact">
+  <div class="contact-box">
+    <div class="contact-links">
+
+      <div class="links">
+        <h2>Register With Us</h2>
+      </div>
+    </div>
+    <div class="contact-form-wrapper">
+      <form method="post">
         {%csrf_token%}
-        <div class="form-group col-md-6">
-          <label for="exampleInputEmail1">Name</label>
-          <input name = "name" type="text" class="form-control" id="name" aria-describedby="emailHelp">
-          <small id="emailHelp" class="form-text text-muted">As per your Certificates.</small>
+        <div class="form-item">
+          <input type="text" name="name" id="name" required>
+          <label>Name:</label>
+        </div>
+        <div class="form-item">
+<!--          <label for="exampleInputPassword1">Mail</label>-->
+          <input type="text" name="mail" id="mail" required>
+          <label>Email:</label>
         </div>
 
-        <div class="form-group col-md-6">
-          <label for="exampleInputPassword1">Roll.No</label>
-          <input name = "rollno" type="text" class="form-control" id="rollno">
+        <div class="form-item">
+
+          <input name = "rollno" type="text" id="rollno" required>
+          <label>Roll.No</label>
         </div>
 
-        <div class="form-group col-md-6">
-            <label for="exampleInputPassword1">Mail</label>
-            <input name = "mail" type="email" class="form-control" id="mail">
-          </div>
-
-        <div class="form-group col-md-6">
-            <label for="inputState">Your Current Programming Level</label>
-            <select name="skill" id="inputState" class="form-control" id="skill">
+        <div class="form-item">
+          <select name="skill" id="inputState" style="width: 100%;
+  outline: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 12px;
+  font-size: clamp(15px, 1.5vw, 18px);" id="skill" required>-->
               <option selected>Beginner</option>
               <option>Intermediate</option>
               <option>Pro</option>
             </select>
-          </div>
 
-        
-        <button type="submit" class="btn btn-primary">Submit</button>
-
-        
+        </div>
+        <button type="submit" class="submit-btn">Send</button>
       </form>
+    </div>
+  </div>
+</section>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
   </body>
 </html>
