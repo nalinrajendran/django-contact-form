@@ -5,6 +5,7 @@ from .models import Post
 from django.views.generic import ListView
 # Create your views here.
 
+
 def form(request):
 
     if request.method == 'POST':
@@ -21,8 +22,7 @@ def form(request):
         contact.save()
         return HttpResponse("Thanks For Reaching Out !!")
 
-
-    return render (request, 'form.html')
+    return render(request, 'form.html')
 
 
 class HomePage(ListView):
@@ -31,6 +31,3 @@ class HomePage(ListView):
 
     template_name = 'board.html'
     context_object_name = 'all_posts_list'
-
-
-
